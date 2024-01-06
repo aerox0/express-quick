@@ -7,7 +7,7 @@
   [![NPM Downloads][npm-downloads-image]][npm-downloads-url]
 
 ```js
-const express = require('express')
+const express = require('fast-express')
 const app = express()
 
 app.get('/', function (req, res) {
@@ -32,7 +32,7 @@ Installation is done using the
 [`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
 
 ```console
-$ npm install express
+$ npm install fast-express
 ```
 
 Follow [our installing guide](http://expressjs.com/en/starter/installing.html)
