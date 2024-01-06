@@ -108,12 +108,12 @@ describe('req', function(){
   })
 })
 
-function createApp(setting = 'extended') {
+function createApp(setting) {
   var app = express();
 
-  if (setting !== undefined) {
-    app.set('query parser', setting);
-  }
+  if (setting === undefined) setting = 'extended';
+
+  app.set('query parser', setting);
 
   app.use(function (req, res) {
     res.send(req.query);
