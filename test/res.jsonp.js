@@ -131,13 +131,13 @@ describe('res', function(){
       var app = express();
 
       app.get('/', function(req, res){
-        res.type('application/vnd.example+json');
+        res.type('application/json');
         res.jsonp({ hello: 'world' });
       });
 
       request(app)
       .get('/')
-      .expect('Content-Type', 'application/vnd.example+json; charset=utf-8')
+      .expect('Content-Type', 'application/json; charset=utf-8')
       .expect(utils.shouldNotHaveHeader('X-Content-Type-Options'))
       .expect(200, '{"hello":"world"}', done);
     })
@@ -146,7 +146,7 @@ describe('res', function(){
       var app = express();
 
       app.get('/', function(req, res){
-        res.type('application/vnd.example+json');
+        res.type('application/json');
         res.jsonp({ hello: 'world' });
       });
 
@@ -375,13 +375,13 @@ describe('res', function(){
     var app = express();
 
     app.get('/', function(req, res){
-      res.type('application/vnd.example+json');
+      res.type('application/json');
       res.jsonp({ hello: 'world' });
     });
 
     request(app)
     .get('/')
-    .expect('content-type', 'application/vnd.example+json; charset=utf-8')
+    .expect('content-type', 'application/json; charset=utf-8')
     .expect(200, '{"hello":"world"}', done)
   })
 })
